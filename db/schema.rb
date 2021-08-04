@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_04_024510) do
+ActiveRecord::Schema.define(version: 2021_08_04_032024) do
 
-  create_table "deck", force: :cascade do |t|
+  create_table "decks", force: :cascade do |t|
     t.string "value"
     t.string "suit"
   end
 
-  create_table "player", force: :cascade do |t|
+  create_table "players", force: :cascade do |t|
     t.string "hand"
     t.integer "hand_value"
   end
