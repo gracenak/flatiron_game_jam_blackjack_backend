@@ -1,20 +1,18 @@
 class Player < ApplicationRecord
     
-    def turn
-        player = Player.find_by(id: params[:id])
-        playerturn = true
-
-        #if player.draws
-            #player.get_card
-            #player.hand_value += card_value
-        #end
-
+    def playerTurn?(player)
         if player.hand_value > 21 || #player stands
-            playerturn = false
+            return false
+        else
+            return true
         end
+    end
 
-        if playerturn == true
-            player.turn #calls method again
+    def playerLost?(player)
+        if player.hand_value > 21 || dealer.hand_value > player.hand_value
+            return false
+        else
+            return true
         end
     end
 end
