@@ -6,3 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 player = Player.create(hand: 'King', hand_value: 10)
+
+jack = Deck.create(value: 10, suit: "hearts")
+queen = Deck.create(value: 10, suit: "hearts")
+king = Deck.create(value: 10, suit: "hearts")
