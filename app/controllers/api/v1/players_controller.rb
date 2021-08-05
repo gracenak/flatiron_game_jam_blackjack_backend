@@ -7,6 +7,7 @@ class Api::V1::PlayersController < ApplicationController
 
     def show
         player = Player.find_by(id: params[:id])
+        render json: player
     end
 
     def create
@@ -21,5 +22,5 @@ class Api::V1::PlayersController < ApplicationController
             :hand,
             :hand_value
         )
-    
+    end
 end
