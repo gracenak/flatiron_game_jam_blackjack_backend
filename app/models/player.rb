@@ -15,4 +15,12 @@ class Player < ApplicationRecord
             return true
         end
     end
+
+    def playerWon?(player)
+        if player.hand_value > dealer.hand_value
+            return true
+        else
+            return false
+        end
+    end
 end
