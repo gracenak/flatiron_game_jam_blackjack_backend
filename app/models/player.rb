@@ -9,10 +9,10 @@ class Player < ApplicationRecord
     end
 
     def playerLost?(player)
-        if player.hand_value > 21 || dealer.hand_value > player.hand_value
-            return false
-        else
+        if player.hand_value > 21 || dealer.hand_value > player.hand_value || dealer.hand_value == 21
             return true
+        else
+            return false
         end
     end
 
