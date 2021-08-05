@@ -11,7 +11,8 @@ player2 = Player.create(hand: 'Seven', hand_value: 7)
 player3 = Player.create(hand: 'Ten', hand_value: 10)
 
 
-jack = Deck.create(value: 10, suit: "hearts")
-queen = Deck.create(value: 10, suit: "hearts")
-king = Deck.create(value: 10, suit: "hearts")
+jack = Deck.create(value: "Jack", suit: "hearts")
+queen = Deck.create(value: "Queen", suit: "hearts")
+king = Deck.create(value: "King", suit: "hearts")
+ace = Deck.create(value: "Ace", suit: "hearts")
 
