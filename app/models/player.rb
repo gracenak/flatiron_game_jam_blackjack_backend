@@ -2,7 +2,7 @@ class Player < ApplicationRecord
     belongs_to :deck
     
     def playerTurn?(player)
-        if player.hand_value > 21 || #player stands
+        if player.hand_value > 21 #|| #player stands
             return false
         else
             return true

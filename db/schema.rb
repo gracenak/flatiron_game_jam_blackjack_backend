@@ -15,11 +15,18 @@ ActiveRecord::Schema.define(version: 2021_08_04_032024) do
   create_table "decks", force: :cascade do |t|
     t.string "value"
     t.string "suit"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "players", force: :cascade do |t|
     t.string "hand"
     t.integer "hand_value"
+    t.integer "deck_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["deck_id"], name: "index_players_on_deck_id"
   end
 
+  add_foreign_key "players", "decks"
 end
