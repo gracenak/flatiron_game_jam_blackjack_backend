@@ -1,6 +1,5 @@
 class Deck < ApplicationRecord
-
-    
+    has_many :players
 
     def shuffle
         Deck.all.shuffle
