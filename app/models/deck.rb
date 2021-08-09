@@ -18,9 +18,20 @@ class Deck < ApplicationRecord
         end
     end
 
+<<<<<<< HEAD
+    def deal(num, player)
+        cards = []
+        num.times(cards.shift.generate_card(player))
+    end
+
+    def generate_card(player)
+
+    end
+=======
 
 
 
+>>>>>>> main
     
 
 end
