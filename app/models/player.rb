@@ -1,5 +1,4 @@
 class Player < ApplicationRecord
-    belongs_to :deck
     
     def playerTurn?(player)
         if player.hand_value > 21 #|| #player stands
@@ -31,5 +30,9 @@ class Player < ApplicationRecord
         else
             return false
         end
+    end
+
+    def total
+        Player.hand.sum
     end
 end

@@ -7,17 +7,18 @@ class Deck < ApplicationRecord
     end
 
     def face_value(x)
-        if x.value == "Jack" || "Queen" || "King"
+        if x.face == "Jack" || "Queen" || "King"
             return 10
         end
     end
 
     def ace_value(x)
-        if x.value == "Ace" 
+        if x.face == "Ace" 
             return 1 || 11
         end
     end
 
+<<<<<<< HEAD
     def deal(num, player)
         cards = []
         num.times(cards.shift.generate_card(player))
@@ -26,6 +27,11 @@ class Deck < ApplicationRecord
     def generate_card(player)
 
     end
+=======
+
+
+
+>>>>>>> main
     
 
 end

@@ -5,14 +5,22 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-player = Player.create(hand: 'King', hand_value: 10)
-player1 = Player.create(hand: 'Two', hand_value: 2)
-player2 = Player.create(hand: 'Seven', hand_value: 7)
-player3 = Player.create(hand: 'Ten', hand_value: 10)
 
 
-jack = Deck.create(value: "Jack", suit: "hearts")
-queen = Deck.create(value: "Queen", suit: "hearts")
-king = Deck.create(value: "King", suit: "hearts")
-ace = Deck.create(value: "Ace", suit: "hearts")
+
+jack = Deck.create(face: "Jack", suit: "hearts")
+queen = Deck.create(face: "Queen", suit: "hearts")
+king = Deck.create(face: "King", suit: "hearts")
+ace = Deck.create(face: "Ace", suit: "hearts")
+
+jake = Player.create(name: "Jake", hand: [], total: 9, deck_id: jack.id)
+dealer = Player.create(name: "Dealer", hand: [], total: 11, deck_id: queen.id)
+sean = Player.create(name: 'Sean', hand: [], total: 7, deck_id: king.id)
+grace = Player.create(name: 'Grace', hand: [], total: 10, deck_id: ace.id)
+
+card1 = Card.create(value: "10", suit: "10", deck_id: jack.id)
+card2 = Card.create(value: "Jack", suit: "hearts", deck_id: jack.id)
+card3 = Card.create(value: "Ace", suit: "hearts", deck_id: ace.id)
+
+
 
