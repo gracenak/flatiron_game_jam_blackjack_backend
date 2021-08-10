@@ -1,4 +1,6 @@
 class Player < ApplicationRecord
+    has_many :cards
+    belongs_to :deck
     
     def playerTurn?(player)
         if player.hand_value > 21 #|| #player stands
