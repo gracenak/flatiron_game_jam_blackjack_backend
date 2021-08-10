@@ -15,6 +15,16 @@ class Api::V1::PlayersController < ApplicationController
         render json: player
     end
 
+    def end_game
+        if playerLost? 
+            flash.alert = "Player Lost Hand"
+        else
+            playerWon?
+            flash.alert = "Player Wins This Hand"
+        end
+
+    end
+
 
     private
 
