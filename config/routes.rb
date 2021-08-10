@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'end_game', action: :end_game, controller: 'cards'
   resources :cards
   namespace :api do
     namespace :v1 do
