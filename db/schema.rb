@@ -16,9 +16,11 @@ ActiveRecord::Schema.define(version: 2021_08_08_013634) do
     t.string "value"
     t.string "suit"
     t.integer "deck_id", null: false
+    t.integer "player_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["deck_id"], name: "index_cards_on_deck_id"
+    t.index ["player_id"], name: "index_cards_on_player_id"
   end
 
   create_table "decks", force: :cascade do |t|
@@ -39,5 +41,6 @@ ActiveRecord::Schema.define(version: 2021_08_08_013634) do
   end
 
   add_foreign_key "cards", "decks"
+  add_foreign_key "cards", "players"
   add_foreign_key "players", "decks"
 end
