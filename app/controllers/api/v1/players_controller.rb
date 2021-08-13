@@ -17,14 +17,12 @@ class Api::V1::PlayersController < ApplicationController
 
     def end_game
         binding.pry
-        # if playerLost? 
-        #     flash.alert = "Player Lost Hand"
-        # else
-        #     playerWon?
-        #     flash.alert = "Player Wins This Hand"
-        # end
-
-        flash[:notice] = "Button works REEEEEE"
+        if playerLost? 
+            flash.alert = "Player Lost Hand"
+        else
+            playerWon?
+            flash.alert = "Player Wins This Hand"
+        end
 
     end
 
