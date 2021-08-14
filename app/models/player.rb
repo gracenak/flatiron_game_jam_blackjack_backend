@@ -33,9 +33,19 @@ class Player < ApplicationRecord
         end
     end
 
-
-    def deal_hand(card)
-        player.cards << card
-        player.hand_value = player.hand_value += card.value.to_i
+    def determine_ace_value(player)
+        if player.hand_value <= 10
+            return 11
+        else 
+            return 1
+        end
     end
+
+
+    def deal_and_update_hand(card)
+        self.cards << card
+        self.hand_value += card.value.to_i
+        self.save
+    end
+
 end
