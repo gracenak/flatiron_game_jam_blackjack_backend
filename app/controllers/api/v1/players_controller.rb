@@ -1,33 +1,31 @@
 class Api::V1::PlayersController < ApplicationController
 
     def index
-        player = Player.all
+        binding.pry
+        player = "Dude"
         render json: player
     end
 
     def show
+        binding.pry
         player = Player.find_by(id: params[:id])
         render json: player
     end
 
     def create
-        player = Player.create(player_params)
-        render json: player
+        # params["_json"][0]["cards"][0]["code"] for code
+        # params["_json"][0]["cards"][0]["value"] for value
+        # params["_json"][0]["cards"][0]["suit"] for suit
+        # params["_json"][0] is player
+        # params["_json"][1] is dealer
+        binding.pry
     end
 
     def end_game
         binding.pry
-        # if playerLost? 
-        #     flash.alert = "Player Lost Hand"
-        # else
-        #     playerWon?
-        #     flash.alert = "Player Wins This Hand"
-        # end
-
-        flash[:notice] = "Button works REEEEEE"
-
+        player = Player.all
+        render json: player
     end
-
 
     private
 
