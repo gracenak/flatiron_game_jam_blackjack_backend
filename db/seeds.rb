@@ -13,15 +13,15 @@
 # king = Deck.create(face: "King", suit: "hearts")
 # ace = Deck.create(face: "Ace", suit: "hearts")
 
-jake = Player.create(hand_value: 0)
-dealer = Player.create(hand_value: 0)
-sean = Player.create(hand_value: 0)
-grace = Player.create(hand_value: 0)
+jake = Player.create!(hand_value: 0)
+dealer = Player.create!(hand_value: 0)
+sean = Player.create!(hand_value: 0)
+grace = Player.create!(hand_value: 0)
 
-card1 = Card.create(value: "10", suit: "hearts", player_id: jake.id)
-card2 = Card.create(value: "Jack", suit: "hearts", player_id: dealer.id)
-card3 = Card.create(value: "Ace", suit: "hearts", player_id: sean.id)
-card4 = Card.create(value: "9", suit: "hearts", player_id: grace.id)
+card1 = Card.create!(value: "10", suit: "hearts", player_id: jake.id)
+card2 = Card.create!(value: "Jack", suit: "hearts", player_id: dealer.id)
+card3 = Card.create!(value: "Ace", suit: "hearts", player_id: sean.id)
+card4 = Card.create!(value: "9", suit: "hearts", player_id: grace.id)
 
 
 

@@ -37,6 +37,6 @@ class Player < ApplicationRecord
 
     def deal_hand(card)
         player.cards << card
-        player.total = player.total += card.value.to_i
+        player.hand_value = player.hand_value += card.value.to_i
     end
 end
