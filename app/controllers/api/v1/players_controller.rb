@@ -27,7 +27,8 @@ class Api::V1::PlayersController < ApplicationController
 
     def update
         @player = Player.find_by(id: params[:id])
-        if @player.update(hand_value: params[:player][:hand_value])
+        @card = Card.find_by(id: params_id)
+        if @player.deal_and_update_hand(@card)
             @player.save
             render json: @player
         else
