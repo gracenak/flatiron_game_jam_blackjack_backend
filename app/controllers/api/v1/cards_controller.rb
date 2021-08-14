@@ -1,21 +1,33 @@
-class Api::V1::DecksController < ApplicationController
+class Api::V1::CardsController < ApplicationController
 
-    def index 
-        @cards = Cards.all
+    # before action :set_player
+
+    def index
+        @cards = Card.all
         render json: @cards
-
     end
 
-    def show
-        @cards = Cards.find_by(id: params[:id])
-
+    def show 
+        @card = Card.find_by(params[:id])
+        render json: @card
     end
 
+    def create
+        @card = @player.cards.new(card_params)
+        if @card.save
+            render json: @card
+        else
+            render json: {error: @review.errors.messages}, status: 422 
+        end
+    end
 
     private
 
-    def deck_params
-        params.require(:card).permit(:value, :suit)
+    def set_player
+        @player = Player.find(params[:recipe_id])
     end
 
+    def card_params
+        params.require(:card).permit(:value, :suit, :player_id)
+    end
 end

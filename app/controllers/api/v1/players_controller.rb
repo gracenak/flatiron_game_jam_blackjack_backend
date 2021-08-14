@@ -1,13 +1,11 @@
 class Api::V1::PlayersController < ApplicationController
 
     def index
-        binding.pry
         @players = Player.all
         render json: @players
     end
 
     def show
-        binding.pry
         @player = Player.find_by(id: params[:id])
         render json: @player
     end
@@ -18,8 +16,8 @@ class Api::V1::PlayersController < ApplicationController
         # params["_json"][0]["cards"][0]["suit"] for suit
         # params["_json"][0] is player
         # params["_json"][1] is dealer
-        binding.pry
         @player = Player.new(player_params)
+        binding.pry
         if @player.save
             render json: @player
         else
