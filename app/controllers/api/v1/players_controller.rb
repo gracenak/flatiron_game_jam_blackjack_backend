@@ -2,14 +2,14 @@ class Api::V1::PlayersController < ApplicationController
 
     def index
         binding.pry
-        player = "Dude"
-        render json: player
+        @players = Player.all
+        render json: @players
     end
 
     def show
         binding.pry
-        player = Player.find_by(id: params[:id])
-        render json: player
+        @player = Player.find_by(id: params[:id])
+        render json: @player
     end
 
     def create
@@ -19,6 +19,22 @@ class Api::V1::PlayersController < ApplicationController
         # params["_json"][0] is player
         # params["_json"][1] is dealer
         binding.pry
+        @player = Player.new(player_params)
+        if @player.save
+            render json: @player
+        else
+            render json: {error: @recipe.error.messages}, status: 422
+        end
+    end
+
+    def update
+        @player = Player.find_by(id: params[:id])
+        if @player.update(hand_value: params[:player][:hand_value])
+            @player.save
+            render json: @player
+        else
+            render json: {error: @recipe.error.messages}, status: 422
+        end
     end
 
     def end_game
@@ -34,9 +50,6 @@ class Api::V1::PlayersController < ApplicationController
     private
 
     def player_params
-        params.require(:players).permit(
-            :hand,
-            :hand_value
-        )
+        params.require(:player).permit(:hand_value)
     end
 end

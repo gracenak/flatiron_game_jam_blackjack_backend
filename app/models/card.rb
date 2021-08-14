@@ -16,4 +16,5 @@ def ace_value(x)
   if x.face == "Ace" 
       return 1 || 11
   end
+  end
 end
