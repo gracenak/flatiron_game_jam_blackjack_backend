@@ -1,15 +1,15 @@
 class Api::V1::CardsController < ApplicationController
 
-    before action :set_player
+    # before action :set_player
 
     def index
         @cards = Card.all
-        render json :@cards
+        render json: @cards
     end
 
     def show 
         @card = Card.find_by(params[:id])
-        render json :@card
+        render json: @card
     end
 
     def create

@@ -1,4 +1,5 @@
 class CardSerializer < ActiveModel::Serializer
-  attributes :id, :face
-  has_one :deck
+  attributes :id, :value, :suit, :player_id
+
+  belongs_to :player
 end
