@@ -21,23 +21,11 @@ ActiveRecord::Schema.define(version: 2021_08_08_013634) do
     t.index ["player_id"], name: "index_cards_on_player_id"
   end
 
-  create_table "decks", force: :cascade do |t|
-    t.string "face"
-    t.string "suit"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "players", force: :cascade do |t|
-    t.string "name"
-    t.string "hand"
-    t.integer "total"
-    t.integer "deck_id", null: false
+    t.integer "hand_value"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["deck_id"], name: "index_players_on_deck_id"
   end
 
   add_foreign_key "cards", "players"
-  add_foreign_key "players", "decks"
 end
