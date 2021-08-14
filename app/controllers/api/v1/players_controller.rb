@@ -22,9 +22,13 @@ class Api::V1::PlayersController < ApplicationController
     end
 
     def end_game
-        binding.pry
-        player = Player.all
-        render json: player
+        check = nil
+        if playerWon?
+            check = true
+        else
+            check = false
+        end
+            render json: check
     end
 
     private

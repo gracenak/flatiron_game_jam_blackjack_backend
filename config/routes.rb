@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-  get '/players/end_game', to: 'players#end_game', as: 'player'
+  
   resources :cards
   namespace :api do
     namespace :v1 do
+      get '/players/end_game', to: 'players#end_game'
       resources :players 
       resources :game
     end
