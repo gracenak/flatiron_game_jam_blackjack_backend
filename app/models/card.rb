@@ -5,11 +5,15 @@ def shuffle
   Card.all.shuffle
 end
 
-# def face_value(x)
-#   if x.value() == "Jack" || "Queen" || "King"
-#       return 10
-#   end
-# end
+def face_value(x)
+  if x.value == "Jack" || x.value =="Queen" || x.value == "King"
+      return 10
+  elsif x.value == "Ace"
+    return 1
+  else
+    return x.value.to_i
+  end
+end
 
 # def ace_value(x)
 #   if x.value() == "Ace" 
